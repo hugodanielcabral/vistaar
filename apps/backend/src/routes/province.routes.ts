@@ -1,12 +1,9 @@
-import express from "express";
+import { Router } from "express";
 import { getProvince, getProvinces } from "../controllers/province.controllers";
 
-const app = express();
-
-const router = app;
+const router = Router();
 
 router.get("/province/:id", getProvince);
-
-router.get("/province", getProvinces)
+router.get("/province", getProvinces);
 
 export default router;

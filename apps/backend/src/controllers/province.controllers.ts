@@ -11,7 +11,7 @@ export const getProvince = async (
     const { id } = req.params;
 
     if (!id || isNaN(Number(id))) {
-      const error: CustomError = new Error("Province ID is not valid.");
+      const error: CustomError = new Error("El ID de la provincia no es válido.");
       error.status = 400;
       throw error;
     }
@@ -20,7 +20,7 @@ export const getProvince = async (
 
     if (!query.length) {
       res.status(404).json({
-        message: "Province doesn't exist.",
+        error: { message: "La provincia no existe." },
       });
       return;
     }
@@ -42,7 +42,9 @@ export const getProvinces = async (
 
     if (!query.length) {
       res.status(404).json({
-        message: "Provinces don't exist.",
+        error: {
+          message: "No existen provincias registradas.",
+        },
       });
       return;
     }

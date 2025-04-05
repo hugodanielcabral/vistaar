@@ -18,6 +18,7 @@ app.use((err: CustomError, req: Request, res: Response, next: NextFunction) => {
   res.json({
     error: {
       message: err.message,
+      details: err.details || null,
     },
   });
 });

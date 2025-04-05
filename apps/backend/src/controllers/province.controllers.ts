@@ -1,4 +1,3 @@
-import type { CustomError } from "../types/error.type";
 import { Request, Response, NextFunction } from "express";
 import sql from "../db";
 
@@ -9,12 +8,6 @@ export const getProvince = async (
 ): Promise<void> => {
   try {
     const { id } = req.params;
-
-    if (!id || isNaN(Number(id))) {
-      const error: CustomError = new Error("El ID de la provincia no es válido.");
-      error.status = 400;
-      throw error;
-    }
 
     const query = await sql`SELECT * FROM province WHERE province_id = ${id}`;
 

@@ -26,6 +26,7 @@
     "@types/express": "^5.0.1",
     "dotenv": "^16.4.7",
     "express": "^5.1.0",
+    "express-validator": "^7.2.1",
     "postgres": "^3.4.5"
   }
 }

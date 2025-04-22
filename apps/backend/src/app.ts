@@ -1,5 +1,7 @@
 import express, { Request, Response, NextFunction } from "express";
 import provinceRoutes from "./routes/province.routes";
+import landscapeTypeRoutes from "./routes/landscape_type.routes";
+import locationsRoutes from "./routes/locations.routes";
 import { CustomError } from "./types/error.type";
 
 const app = express();
@@ -10,6 +12,8 @@ app.use(express.urlencoded({ extended: false }));
 
 // ROUTES
 app.use("/api", provinceRoutes);
+app.use("/api", landscapeTypeRoutes);
+app.use("/api", locationsRoutes);
 
 // ERROR HANDLER
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

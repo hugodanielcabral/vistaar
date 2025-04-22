@@ -1,4 +1,4 @@
 node_modules/
 postgres-vistaar/
+vistar-http-tests/
 .env
-Vistaar-HTTP/

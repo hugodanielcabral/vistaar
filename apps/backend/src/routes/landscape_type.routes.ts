@@ -3,11 +3,11 @@ import {
   getLandscapeType,
   getLandscapeTypes,
 } from "../controllers/landscape_type.controllers";
-import { validateLandscapeType } from "../middlewares/validators/landscape_type.validators";
+import { idValidator } from "../middlewares/validators/idValidator";
 
 const router = Router();
 
-router.get("/landscape_type/:id", validateLandscapeType, getLandscapeType);
+router.get("/landscape_type/:id", idValidator("Tipo de paisaje"), getLandscapeType);
 router.get("/landscape_type", getLandscapeTypes);
 
 export default router;

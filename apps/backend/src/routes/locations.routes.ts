@@ -3,11 +3,11 @@ import {
   getLocation,
   getLocations,
 } from "../controllers/locations.controllers";
-import { validateLocation } from "../middlewares/validators/locations.validators";
+import { idValidator } from "../middlewares/validators/idValidator";
 
 const router = Router();
 
-router.get("/locations/:id", validateLocation, getLocation);
+router.get("/locations/:id", idValidator("Ubicación"), getLocation);
 router.get("/locations", getLocations);
 
 export default router;

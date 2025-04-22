@@ -3,6 +3,7 @@ import provinceRoutes from "./routes/province.routes";
 import landscapeTypeRoutes from "./routes/landscape_type.routes";
 import locationsRoutes from "./routes/locations.routes";
 import landscapesRoutes from "./routes/landscapes.routes";
+import cors from "cors";
 import { CustomError } from "./types/error.type";
 
 const app = express();
@@ -10,6 +11,12 @@ const app = express();
 // MIDDLEWARES
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(
+  cors({
+    origin: "http://localhost:5173/",
+    credentials: true,
+  })
+);
 
 // ROUTES
 app.use("/api", provinceRoutes);
